@@ -1,3 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-  <circle cx="16" cy="16" r="14" fill="#2cd27a" />
+  <defs>
+    <linearGradient id="themeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#195f7a" />
+      <stop offset="100%" stop-color="#1dcf9e" />
+    </linearGradient>
+  </defs>
+  <circle cx="16" cy="16" r="14" fill="url(#themeGradient)" />
 </svg>

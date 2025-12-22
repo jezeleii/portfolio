@@ -51,11 +51,20 @@ export const ProjectSection = () => {
                 </p>
 
                 {/* projects */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+                            className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover cursor-pointer flex flex-col h-full"
+                            role="link"
+                            tabIndex={0}
+                            onClick={() => window.open(project.demoUrl, "_blank", "noopener,noreferrer")}
+                            onKeyDown={(event) => {
+                                if (event.key === "Enter" || event.key === " ") {
+                                    event.preventDefault();
+                                    window.open(project.demoUrl, "_blank", "noopener,noreferrer");
+                                }
+                            }}
                         >
                             {/* image */}
                             <div className="h-48 overflow-hidden">
@@ -65,8 +74,8 @@ export const ProjectSection = () => {
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
-                            {/* tags */}
-                            <div className="p-6">
+                            {/* content */}
+                            <div className="flex-1 flex flex-col px-6 py-6">
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag) => (
                                         <span
@@ -77,20 +86,23 @@ export const ProjectSection = () => {
                                         </span>
                                     ))}
                                 </div>
-                            </div>
-                            {/* project */}
-                            <div className="pb-7 px-6">
-                                <h3 className="pb-5 text-xl font-semibold bm-2">
+                                <div className="flex-1 flex flex-col">
+                                    <h3 className="pb-5 text-xl font-semibold">
                                         {project.title}
-                                </h3>
-                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                                <div className="flex justify-between items-center">
+                                    </h3>
+                                    <p className="text-muted-foreground text-sm">
+                                        {project.description}
+                                    </p>
+                                </div>
+                                <div className="mt-6 flex justify-between items-center">
                                     <div className="flex space-x-3">
                                         <a 
                                             href={project.demoUrl} 
                                             target="_blank"
+                                            rel="noreferrer"
                                             className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                            >
+                                            onClick={(event) => event.stopPropagation()}
+                                        >
                                             <ExternalLink size={20}/>
                                         </a>
                                         {project.githubDisabled ? (
@@ -107,6 +119,7 @@ export const ProjectSection = () => {
                                                 target="_blank"
                                                 rel="noreferrer"
                                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                                onClick={(event) => event.stopPropagation()}
                                             >
                                                 <Github size={20}/>
                                             </a>
@@ -114,7 +127,6 @@ export const ProjectSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     ))}
                 </div>

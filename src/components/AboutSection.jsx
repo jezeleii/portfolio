@@ -11,24 +11,24 @@ export const AboutSection = () => {
             {/* left section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-6 text-center md:text-left">
-                    <h3 className="text-2xl font-semibold">Passionate Web Developer & Data Analyst</h3>
+                    <h3 className="text-2xl font-semibold">Data Analyst & Sustainability Consultant</h3>
                     <p className="text-muted-foreground">
-                        With over 4 years of experience in web development, I 
-                        specialise in creating responsive, accessible, and performant
-                        web applications using modern technologies.
+                        With over 4 years of experience bridging analytics with mission-driven work, I build tools that help organisations respond to climate and social challenges while staying user-focused.
                     </p>
 
                     <p className="text-muted-foreground">
-                        I'm passionate about creating elegant solutions to 
-                        complex problems, and I'm constantly learning new technologies and
-                        techniques to stay at the forefront of the ever-evolving web landscape.
+                        I love translating complex datasets into actionable sustainability insights, blending design thinking, stakeholder empathy, and modern development practices to stay ahead of the planet's emerging needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                         <a href="#contact" className="cosmic-button">
                             {" "}
                             Get in Touch
                         </a>
-                        <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                        <a
+                            href="private/jezelei_manangan_cv.pdf"
+                            className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                            download
+                        >
                             Download CV
                         </a>
                     </div>
@@ -42,11 +42,10 @@ export const AboutSection = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="text-semibold text-lg">
-                                    Web Development
+                                    Climate Data Storytelling
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    Creating responsive websites and web applications with 
-                                    modern frameworks.
+                                    Building interactive dashboards and sites that turn ESG metrics into clear narratives for stakeholders.
                                 </p>
                             </div>
                         </div>
@@ -58,11 +57,10 @@ export const AboutSection = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="text-semibold text-lg">
-                                    UI/UX Design
+                                    Sustainable UX Design
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    Designing intuitive user interfaces with 
-                                    seamless user experiences.
+                                    Crafting low-impact journeys that keep users engaged while respecting accessibility and performance budgets.
                                 </p>
                             </div>
                         </div>
@@ -74,11 +72,10 @@ export const AboutSection = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="text-semibold text-lg">
-                                    Project Management
+                                    Responsible Delivery
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    Leading projects from conception to completion with 
-                                    agile methodologies.
+                                    Leading cross-functional teams to ship climate-aware products on time with measurable impact.
                                 </p>
                             </div>
                         </div>

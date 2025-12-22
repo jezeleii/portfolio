@@ -1,127 +1,185 @@
-import { useState } from "react";
+import { Icon as IconifyIcon } from "@iconify/react";
 import { cn } from "@/lib/utils";
 
-const skills = [
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
 
-  // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
-
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
+const dataAnalysisSkills = [
+  { name: "Python", level: 95 },
+  { name: "SQL", level: 92 },
+  { name: "Excel", level: 90 },
+  { name: "Tableau", level: 88 },
+  { name: "R", level: 80 },
 ];
 
-const certifications = [
-  {
-    name: "Bloomberg Market Concepts",
-    issuer: "Bloomberg",
-    issued: "Issued 2025",
-    image: "/certifications/bloomberg_bmc.png",
-    url: "https://portal.bloombergforeducation.com/certificates/SJouhWjN4iKCJSJyM9mweRsP",
-  },
-  {
-    name: "Bloomberg ESG Certificate",
-    issuer: "Bloomberg",
-    issued: "Issued 2025",
-    image: "/certifications/bloomberg_esg.png",
-    url: "https://portal.bloombergforeducation.com/certificates/SXgcbYWnpZ5MEohPxp1Y5B7n",
-  },
+const esgSkills = [
+  { name: "Life Cycle Assessment", level: 86 },
+  { name: "Climate Risk Analytics", level: 83 },
+  { name: "Sustainability Consulting", level: 80 },
+  { name: "Green Software", level: 79 },
+  { name: "Conflict Assessment", level: 76 },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"]
+const vennOverlap = [
+  "Impact measurement",
+  "Carbon accounting",
+  "Systems thinking",
+];
 
+const tools = [
+  { label: "Python", icon: "logos:python" },
+  { label: "SQL", icon: "logos:mysql" },
+  { label: "Tableau", icon: "logos:tableau-icon" },
+  { label: "Power BI", imgSrc: "/logo/power-bi.png" },
+  { label: "Excel", imgSrc: "/logo/excel.png" },
+  { label: "R", icon: "logos:r-lang" },
+  { label: "PostgreSQL", icon: "logos:postgresql" },
+  { label: "Supabase", icon: "logos:supabase-icon" },
+  { label: "React", icon: "logos:react" },
+  { label: "Figma", icon: "logos:figma" },
+  { label: "JIRA", icon: "logos:jira" },
+  { label: "Bloomberg", imgSrc: "/logo/bloomberg.jpeg" },
+];
 
 export const SkillsSection = () => {
-    const [activeCategory, setActiveCategory] = useState("all"); 
-    const filteredSkills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory
-); 
-
-    return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                My <span className="text-primary">{" "}Skills</span>
-            </h2>
-
-            {/* Category Selector */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-                {categories.map((category, key) => (
-                    <button 
-                        key={key}
-                        onClick={() => setActiveCategory(category)}
-                        className={cn(
-                            "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                            activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover: bg-secondary"
-                        )}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </div>
-
-            {/* Skills Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredSkills.map((skill, key) => (
-                    <div key={key} className="bg-card p-6 rounded-lg shadow-xs card-hover">
-                        <div className="text-left mb-4">
-                            <h3 className="font-semibold text-lg">{skill.name}</h3>
-                        </div>
-                        {/* loading bar */}
-                        <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                            <div 
-                                className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                                style={{width: `${skill.level}%`}}
-                            />
-                        </div>
-
-                        <div className="text-right mt-1">
-                            <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            {/* Certifications */}
-            <div className="mt-16">
-                <h3 className="text-2xl font-semibold text-center mb-8">
-                    Certifications
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {certifications.map((cert, index) => (
-                        <a
-                            key={index}
-                            href={cert.url}
-                            className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col space-y-4"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <div className="h-32 overflow-hidden rounded-md bg-background/60 flex items-center justify-center">
-                                <img
-                                    src={cert.image}
-                                    alt={cert.name}
-                                    className="object-contain h-full"
-                                />
-                            </div>
-                            <div className="flex flex-col space-y-2 text-left">
-                                <h4 className="text-lg font-semibold">{cert.name}</h4>
-                                <p className="text-muted-foreground text-sm">{cert.issuer}</p>
-                                <p className="text-sm text-foreground/80">{cert.issued}</p>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </div>
+  return (
+    <section id="skills" className="py-24 px-4 bg-secondary/10">
+      <div className="container mx-auto max-w-6xl space-y-12">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mt-3">
+            My <span className="text-primary">Skills</span>
+          </h2>
         </div>
+
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-10 items-center">
+          <SkillColumn
+            subtitle="Audience & Analytics"
+            skills={dataAnalysisSkills}
+            gradient="from-sky-500 to-cyan-400"
+          />
+
+          <VennDiagram />
+
+          <SkillColumn
+            subtitle="ESG & Sustainability"
+            skills={esgSkills}
+            gradient="from-emerald-500 to-lime-400"
+          />
+        </div>
+
+        <div>
+          <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground text-center">
+            Tools & Technologies
+          </p>
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {tools.map((tool) => (
+              <div
+                key={tool.label}
+                className="rounded-2xl p-4 flex flex-col items-center gap-3 hover:-translate-y-1 transition-transform duration-300 bg-card/40 backdrop-blur-md shadow-sm"
+              >
+                <ToolIcon icon={tool.icon} imgSrc={tool.imgSrc} label={tool.label} />
+                <p className="text-sm font-medium text-foreground">{tool.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
-    )
-}
+  );
+};
+
+const SkillColumn = ({ title, subtitle, skills, gradient }) => (
+  <div className="space-y-6">
+    <div>
+      <h3 className="text-lg font-semibold text-foreground">
+        {subtitle}
+      </h3>
+      <p className="text-sm text-muted-foreground">{title}</p>
+    </div>
+    <div className="space-y-3">
+      {skills.map((skill) => (
+        <div key={skill.name}>
+          <div className="flex justify-between text-sm text-foreground">
+            <span>{skill.name}</span>
+            <span>{skill.level}%</span>
+          </div>
+          <div className="relative w-full h-1.5 rounded-full bg-foreground/10 overflow-hidden">
+            <div className="absolute inset-0 bg-white/10" />
+            <div
+              className={cn("relative h-full rounded-full bg-gradient-to-r", gradient)}
+              style={{ width: `${skill.level}%` }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const VennDiagram = () => (
+  <div className="relative flex items-center justify-center">
+    <div className="relative w-[420px] h-[420px]">
+      <Circle
+        className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
+        color="rgba(56,189,248,0.2)"
+        borderColor="#38bdf8"
+        style={{ left: "8%" }}
+      />
+      <Circle
+        className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
+        color="rgba(74,222,128,0.2)"
+        borderColor="#4ade80"
+        style={{ right: "8%" }}
+      />
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 space-y-1.5">
+        <p className="text-sm uppercase tracking-[0.5em] text-muted-foreground">
+          Shared DNA
+        </p>
+        {vennOverlap.map((item) => (
+          <p key={item} className="text-base text-foreground/90">
+            {item}
+          </p>
+        ))}
+      </div>
+      <CircleLabel position="left" text="Data" />
+      <CircleLabel position="right" text="ESG" />
+    </div>
+  </div>
+);
+
+const Circle = ({ className, color, borderColor, style }) => (
+  <div
+    className={cn("rounded-full border", className)}
+    style={{ backgroundColor: color, borderColor, ...style }}
+  />
+);
+
+const CircleLabel = ({ position, text }) => {
+  const isLeft = position === "left";
+  return (
+    <div
+      className={cn(
+        "absolute top-10 text-sm uppercase tracking-[0.5em] text-muted-foreground",
+        isLeft ? "-left-8" : "-right-8"
+      )}
+    >
+      {text}
+    </div>
+  );
+};
+
+const ToolIcon = ({ icon, imgSrc, label, className }) => (
+  <span
+    className={cn(
+      "w-14 h-14 flex items-center justify-center text-primary",
+      className
+    )}
+    style={{ color: "hsl(var(--primary))" }}
+  >
+    {imgSrc ? (
+      <img src={imgSrc} alt={label} className="w-8 h-8 object-contain" />
+    ) : icon ? (
+      <IconifyIcon icon={icon} className="w-8 h-8" />
+    ) : null}
+  </span>
+);
+
+export default SkillsSection;
