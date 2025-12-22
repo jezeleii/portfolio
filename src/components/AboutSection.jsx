@@ -17,7 +17,7 @@ export const AboutSection = () => {
                     </p>
 
                     <p className="text-muted-foreground">
-                        I love translating complex datasets into actionable sustainability insights, blending design thinking, stakeholder empathy, and modern development practices to stay ahead of the planet's emerging needs.
+                        I excel in translating turning numbers into action, blending design thinking, stakeholder empathy, and modern development practices to stay ahead of the planet's emerging needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                         <a href="#contact" className="cosmic-button">
@@ -60,7 +60,7 @@ export const AboutSection = () => {
                                     Sustainable UX Design
                                 </h4>
                                 <p className="text-muted-foreground">
-                                    Crafting low-impact journeys that keep users engaged while respecting accessibility and performance budgets.
+                                    Crafting sustainable journeys that keep users engaged while respecting accessibility and performance budgets.
                                 </p>
                             </div>
                         </div>

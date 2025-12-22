@@ -36,7 +36,7 @@ const tools = [
   { label: "React", icon: "logos:react" },
   { label: "Figma", icon: "logos:figma" },
   { label: "JIRA", icon: "logos:jira" },
-  { label: "Bloomberg", imgSrc: "/logo/bloomberg.jpeg" },
+  { label: "Bloomberg", imgSrc: "/logo/bloomberg.png" },
 ];
 
 export const SkillsSection = () => {
