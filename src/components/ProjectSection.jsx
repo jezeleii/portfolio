@@ -8,7 +8,7 @@ const projects = [
         id: 1,
         title:
             "Visualising Flood Risk in Singapore",
-        description: "A Geospatial Web App using React and Python",
+        description: "A geospatial web app using React and Python",
         image: "/projects/project-1.png",
         tags: ["React", "Supabase", "Python"],
         demoUrl: "#",
@@ -17,13 +17,23 @@ const projects = [
     },
     {
         id: 2,
-        title: "Geospatial Portfolio using R - Advanced Analysis",
+        title: "Geospatial Portfolio Using R - Advanced Analysis",
         description:
-            "Featuring Intermediate and Advanced Geospatial Analysis Techniques for 3 real-life case studies",
+            "Featuring intermediate and advanced geospatial analysis techniques for 3 real-life case studies",
         image: "/projects/project-2.png",
         tags: ["R", "Quarto"],
         demoUrl: "#",
         githubUrl: "#",
+    },
+    {
+        id: 3,
+        title: "Altercop Corporate Website",
+        description: "Lead website developer for Altercop, building a responsive marketing site and implementing custom animations for product storytelling.",
+        image: "/projects/project-3.png",
+        tags: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://www.altercop.com/",
+        githubUrl: "#",
+        githubDisabled: true,
     },
 ];
 

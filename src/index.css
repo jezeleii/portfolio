@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme{
@@ -70,27 +71,42 @@
 
 @layer base{ 
   :root{
-    --background: 210 40% 98%; 
-    --foreground: 222 47% 11%; 
+    --background: 207 43% 96%; 
+    --foreground: 217 33% 17%; 
 
-    --card: 0 0% 100%; 
+    --card: 204 45% 98%; 
 
-    --primary: 250 47% 60%; 
-    --primary-foreground: 210 40% 98%; 
+    --primary: 197 65% 29%; 
+    --primary-foreground: 0 0% 98%; 
 
-    --border: 214 32% 91%;
+    --border: 205 33% 83%;
+    --background-gradient:
+      radial-gradient(circle at 12% 18%, rgba(26, 95, 122, 0.55), transparent 40%),
+      radial-gradient(circle at 65% 10%, rgba(58, 123, 147, 0.45), transparent 45%),
+      radial-gradient(circle at 40% 80%, rgba(240, 245, 249, 0.9), transparent 50%),
+      radial-gradient(circle at 85% 60%, rgba(90, 150, 170, 0.5), transparent 55%),
+      radial-gradient(circle at 5% 70%, rgba(197, 214, 226, 0.65), transparent 60%);
+    --hero-background-image: url("/light-mode.jpg");
+    --hero-overlay-color: rgba(255, 255, 255, 0.5);
   }
 
   .dark{
-    --background: 222 47% 4%; 
-    --foreground: 213 31% 91%;
+    --background: 0 0% 2%; 
+    --foreground: 0 0% 93%;
 
-    --card: 222 47% 8%;
+    --card: 0 0% 8%;
 
-    --primary: 250 65% 65%; 
-    --primary-foreground: 213 31% 91%; 
+    --primary: 164 75% 46%; 
+    --primary-foreground: 0 0% 2%; 
 
-    --border: 217 33% 20%; 
+    --border: 160 30% 25%; 
+    --background-gradient:
+      radial-gradient(circle at 20% 20%, rgba(29, 205, 159, 0.18), transparent 45%),
+      radial-gradient(circle at 70% 10%, rgba(18, 32, 30, 0.75), transparent 55%),
+      radial-gradient(circle at 45% 85%, rgba(12, 60, 55, 0.65), transparent 60%),
+      radial-gradient(circle at 5% 65%, rgba(0, 0, 0, 0.8), transparent 70%);
+    --hero-background-image: url("/dark-mode.jpg");
+    --hero-overlay-color: rgba(0, 0, 0, 0.85);
   }
 
   * { 
@@ -102,7 +118,13 @@
   }
 
   body { 
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply text-foreground transition-colors duration-300;
+    background-color: hsl(var(--background));
+    background-image: var(--background-gradient);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1; 
   }
 
@@ -138,7 +160,7 @@
 
 @utility text-glow{ 
   @apply relative; 
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5)
+  text-shadow: 0 0 12px rgba(29, 205, 159, 0.65)
 }
 
 @utility card-hover{ 
@@ -154,7 +176,7 @@
 
 @utility cosmic-button{ 
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+    transition-all duration-300 hover:shadow-[0_0_12px_rgba(29,205,159,0.55)]
     hover:scale-105 active:scale-95; 
 }
 
@@ -169,6 +191,30 @@
   box-shadow: 0 0 10px 2px rgba(255,255,255,0.4); 
 }
 
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    var(--background-gradient),
+    linear-gradient(var(--hero-overlay-color), var(--hero-overlay-color)),
+    var(--hero-background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: 0;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
 #root { 
   max-width: 100%; 
   margin: 0 auto; 

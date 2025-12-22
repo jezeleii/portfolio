@@ -9,24 +9,24 @@ export const AboutSection = () => {
                 About <span className="text-primary"> Me</span>
             </h2>
             {/* left section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="space-y-6 text-center md:text-left">
                     <h3 className="text-2xl font-semibold">Passionate Web Developer & Data Analyst</h3>
                     <p className="text-muted-foreground">
                         With over 4 years of experience in web development, I 
-                        specialise in creatin responsive, accessible, and performant
+                        specialise in creating responsive, accessible, and performant
                         web applications using modern technologies.
                     </p>
 
                     <p className="text-muted-foreground">
                         I'm passionate about creating elegant solutions to 
                         complex problems, and I'm constantly learning new technologies and
-                        techniques to star at the forefront of the ever-evolving web landscape.
+                        techniques to stay at the forefront of the ever-evolving web landscape.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                         <a href="#contact" className="cosmic-button">
                             {" "}
-                            Get In Touch
+                            Get in Touch
                         </a>
                         <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
                             Download CV
@@ -62,7 +62,7 @@ export const AboutSection = () => {
                                 </h4>
                                 <p className="text-muted-foreground">
                                     Designing intuitive user interfaces with 
-                                    seamless user experiences
+                                    seamless user experiences.
                                 </p>
                             </div>
                         </div>

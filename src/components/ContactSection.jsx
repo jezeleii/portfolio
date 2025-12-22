@@ -15,7 +15,7 @@ export const ContactSection = () => {
         setTimeout(() => {
             toast({
                 title: "Message sent!", 
-                description: "Thank you for your message. I'll get back to you soon. "
+                description: "Thank you for your message. I'll get back to you soon."
             })
         }, 1500); 
 
@@ -112,8 +112,7 @@ export const ContactSection = () => {
                                         "mt-5 cosmic-button w-full flex items-center justify-center gap-2",
                                     )}
                                 >
-                                    {isSubmitting ? "Sending..." : "Send Message"}
-                                        Send Message
+                                    {isSubmitting ? "Sending..." : "Send Message"}     
                                     <Send size={16}/>
                                 </button>
                             </div>
