@@ -1,4 +1,4 @@
-# Jezeleii Portfolio
+# Personal Portfolio
 
 Personal portfolio built with React and Vite. The site showcases recent projects, skills, and contact information with a focus on clean design and subtle animation.
 
