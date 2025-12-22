@@ -22,6 +22,23 @@ const skills = [
   { name: "Figma", level: 85, category: "tools" },
 ];
 
+const certifications = [
+  {
+    name: "Bloomberg Market Concepts",
+    issuer: "Bloomberg",
+    issued: "Issued 2025",
+    image: "/certifications/bloomberg_bmc.png",
+    url: "https://portal.bloombergforeducation.com/certificates/SJouhWjN4iKCJSJyM9mweRsP",
+  },
+  {
+    name: "Bloomberg ESG Certificate",
+    issuer: "Bloomberg",
+    issued: "Issued 2025",
+    image: "/certifications/bloomberg_esg.png",
+    url: "https://portal.bloombergforeducation.com/certificates/SXgcbYWnpZ5MEohPxp1Y5B7n",
+  },
+];
+
 const categories = ["all", "frontend", "backend", "tools"]
 
 
@@ -73,6 +90,36 @@ export const SkillsSection = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+            {/* Certifications */}
+            <div className="mt-16">
+                <h3 className="text-2xl font-semibold text-center mb-8">
+                    Certifications
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {certifications.map((cert, index) => (
+                        <a
+                            key={index}
+                            href={cert.url}
+                            className="bg-card p-6 rounded-lg shadow-xs card-hover flex flex-col space-y-4"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <div className="h-32 overflow-hidden rounded-md bg-background/60 flex items-center justify-center">
+                                <img
+                                    src={cert.image}
+                                    alt={cert.name}
+                                    className="object-contain h-full"
+                                />
+                            </div>
+                            <div className="flex flex-col space-y-2 text-left">
+                                <h4 className="text-lg font-semibold">{cert.name}</h4>
+                                <p className="text-muted-foreground text-sm">{cert.issuer}</p>
+                                <p className="text-sm text-foreground/80">{cert.issued}</p>
+                            </div>
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
