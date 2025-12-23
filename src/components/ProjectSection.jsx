@@ -54,9 +54,12 @@ export const ProjectSection = () => {
                 {/* projects */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div
+                        <a
                             key={project.id}
-                            className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                         >
                             {/* image */}
                             <div className="h-48 overflow-hidden">
@@ -87,13 +90,10 @@ export const ProjectSection = () => {
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3">
-                                        <a 
-                                            href={project.demoUrl} 
-                                            target="_blank"
-                                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                            >
-                                            <ExternalLink size={20}/>
-                                        </a>
+                                        <ExternalLink
+                                            size={20}
+                                            className="text-foreground/80 group-hover:text-primary transition-colors duration-300"
+                                        />
                                         {project.githubDisabled ? (
                                             <span
                                                 className="text-foreground/40 cursor-not-allowed"
