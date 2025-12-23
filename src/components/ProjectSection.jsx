@@ -116,7 +116,7 @@ export const ProjectSection = () => {
                                 </div>
                             </div>
                             
-                        </div>
+                        </a>
                     ))}
                 </div>
                 {/* GitHub and Linkedin  */}
