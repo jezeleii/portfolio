@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Linkedin } from "lucide-react";
+import { LiaLinkedin, LiaLinkedinIn } from "react-icons/lia";
 
 const GITHUB_PROFILE_URL = "https://github.com/jezeleii";
 const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/jezeleii/";
@@ -134,7 +135,7 @@ export const ProjectSection = () => {
                         rel="noreferrer"
                         className="cosmic-button inline-flex items-center justify-center gap-2"
                     >
-                        Let's Connect <Linkedin size={16}/>
+                        Let's Connect <LiaLinkedinIn size={16}/>
                     </a>
                 </div>
             </div>

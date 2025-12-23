@@ -1,4 +1,5 @@
 import { Mail, MapPin, Instagram } from "lucide-react";
+import { LiaLinkedinIn } from "react-icons/lia";
 
 export const ContactSection = () => {
     return (
@@ -32,11 +33,14 @@ export const ContactSection = () => {
                         {/* Location */}
                         <div className="flex items-center gap-4">
                             <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
-                                <MapPin className="h-6 w-6 text-primary" />
+                                <LiaLinkedinIn className="h-6 w-6 text-primary" />
                             </div>
                             <div className="text-left">
-                                <h4>Location</h4>
-                                <span className="text-muted-foreground">Singapore | Philippines</span>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/jezelei-m/">
+                                    <span className="text-muted-foreground">Jezelei Manangan</span>
+                                </a>
+                                
                             </div>
                         </div>
                         {/* Instagram */}

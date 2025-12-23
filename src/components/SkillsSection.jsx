@@ -53,7 +53,7 @@ export const SkillsSection = () => {
           <SkillColumn
             subtitle="Audience & Analytics"
             skills={dataAnalysisSkills}
-            gradient="from-sky-500 to-cyan-400"
+            gradient="from-[#0a2b65] to-[#1dcd9f]"
           />
 
           <VennDiagram />
@@ -61,7 +61,7 @@ export const SkillsSection = () => {
           <SkillColumn
             subtitle="ESG & Sustainability"
             skills={esgSkills}
-            gradient="from-emerald-500 to-lime-400"
+            gradient="from-[#1dcd9f] to-[#0a2b65]"
           />
         </div>
 
@@ -119,14 +119,14 @@ const VennDiagram = () => (
     <div className="relative w-[420px] h-[420px]">
       <Circle
         className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
-        color="rgba(56,189,248,0.2)"
-        borderColor="#38bdf8"
+        color="rgba(29,205,159,0.2)"
+        borderColor="#1dcd9f"
         style={{ left: "8%" }}
       />
       <Circle
         className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
-        color="rgba(74,222,128,0.2)"
-        borderColor="#4ade80"
+        color="rgba(10,43,101,0.2)"
+        borderColor="#0a2b65"
         style={{ right: "8%" }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 space-y-1.5">
