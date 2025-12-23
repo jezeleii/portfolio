@@ -19,9 +19,9 @@ const esgSkills = [
 ];
 
 const vennOverlap = [
-  "Impact Measurement",
-  "Climate Investing",
   "Risk Analysis",
+  "Climate Investing",
+  "Impact Measurement",
 ];
 
 const tools = [
@@ -130,9 +130,7 @@ const VennDiagram = () => (
         style={{ right: "8%" }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 space-y-1.5">
-        <p className="text-sm uppercase tracking-[0.5em] text-muted-foreground">
-          Shared DNA
-        </p>
+       
         {vennOverlap.map((item) => (
           <p key={item} className="text-base text-foreground/90">
             {item}
