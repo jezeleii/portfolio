@@ -88,6 +88,10 @@
       radial-gradient(circle at 5% 70%, rgba(197, 214, 226, 0.65), transparent 60%);
     --hero-background-image: url("/light-mode.jpg");
     --hero-overlay-color: rgba(255, 255, 255, 0.5);
+    --venn-green-bg: rgba(29, 205, 159, 0.2);
+    --venn-green-border: #1dcd9f;
+    --venn-blue-bg: rgba(10, 43, 101, 0.2);
+    --venn-blue-border: #0a2b65;
   }
 
   .dark{
@@ -107,6 +111,10 @@
       radial-gradient(circle at 5% 65%, rgba(0, 0, 0, 0.8), transparent 70%);
     --hero-background-image: url("/dark-mode.jpg");
     --hero-overlay-color: rgba(0, 0, 0, 0.4);
+    --venn-green-bg: rgba(29, 205, 159, 0.2);
+    --venn-green-border: #53f1c0;
+    --venn-blue-bg: rgba(80, 130, 200, 0.35);
+    --venn-blue-border: #7ab5ff;
   }
 
   * { 

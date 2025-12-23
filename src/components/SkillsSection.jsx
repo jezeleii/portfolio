@@ -19,9 +19,9 @@ const esgSkills = [
 ];
 
 const vennOverlap = [
-  "Impact measurement",
-  "Carbon accounting",
-  "Systems thinking",
+  "Impact Measurement",
+  "Climate Investing",
+  "Risk Analysis",
 ];
 
 const tools = [
@@ -119,14 +119,14 @@ const VennDiagram = () => (
     <div className="relative w-[420px] h-[420px]">
       <Circle
         className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
-        color="rgba(29,205,159,0.2)"
-        borderColor="#1dcd9f"
+        color="var(--venn-green-bg)"
+        borderColor="var(--venn-green-border)"
         style={{ left: "8%" }}
       />
       <Circle
         className="absolute top-1/2 -translate-y-1/2 w-72 h-72"
-        color="rgba(10,43,101,0.2)"
-        borderColor="#0a2b65"
+        color="var(--venn-blue-bg)"
+        borderColor="var(--venn-blue-border)"
         style={{ right: "8%" }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 space-y-1.5">
