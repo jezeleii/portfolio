@@ -18,6 +18,16 @@ const projects = [
     },
     {
         id: 2,
+        title: "Berkeley Voluntary Carbon Markets",
+        description: "VCM analysis for the Berkeley Voluntary Carbon Markets project.",
+        image: "/projects/project-4.png",
+        tags: ["React", "Data Viz"],
+        demoUrl: "https://vcm-analysis.vercel.app/",
+        githubUrl: "#",
+        githubDisabled: true,
+    },
+    {
+        id: 3,
         title: "Geospatial Portfolio - Urban Resilience",
         description:
             "Featuring intermediate and advanced geospatial analysis techniques for 3 real-life case studies",
@@ -27,7 +37,7 @@ const projects = [
         githubUrl: "https://github.com/jezeleii/IS415-GA",
     },
     {
-        id: 3,
+        id: 4,
         title: "AlterCOP 30",
         description: "Lead website developer for AlterCOP, a remote alternative to COP30 bridging countries across APAC and Europe.",
         image: "/projects/project-3.png",
@@ -52,7 +62,7 @@ export const ProjectSection = () => {
                 </p>
 
                 {/* projects */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {projects.map((project) => (
                         <a
                             key={project.id}
@@ -84,10 +94,12 @@ export const ProjectSection = () => {
                             </div>
                             {/* project */}
                             <div className="pb-7 px-6">
-                                <h3 className="pb-5 text-xl font-semibold bm-2">
+                                <h3 className="pb-5 text-xl font-semibold bm-2 min-h-[3.5rem]">
                                         {project.title}
                                 </h3>
-                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                                <p className="text-muted-foreground text-sm mb-4 min-h-[6rem]">
+                                    {project.description}
+                                </p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3">
                                         <ExternalLink
