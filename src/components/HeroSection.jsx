@@ -15,7 +15,7 @@ export const HeroSection = () => {
           </h1>
           <div className="flex flex-col gap-2 text-4xl md:text-6xl font-bold tracking-tight opacity-0 animate-fade-in-delay-3 text-foreground">
             <span>data <span className="text-primary">analyst</span></span>
-            <span>frontend <span className="text-primary">developer</span></span>
+            <span>fullstack <span className="text-primary">developer</span></span>
             <span>sustainability <span className="text-primary">consultant</span></span>
           </div>
 
