@@ -50,7 +50,9 @@ export const ContactSection = () => {
                             </div>
                             <div className="text-left">
                                 <h4>Github</h4>
-                                <span className="text-muted-foreground">@jezeleii</span>
+                                <a href="https://github.com/jezeleii">
+                                    <span className="text-muted-foreground">jezeleii</span>
+                                </a>
                             </div>
                         </div>
                     </div>
