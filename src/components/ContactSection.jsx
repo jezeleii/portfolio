@@ -1,4 +1,4 @@
-import { Mail, MapPin, Instagram } from "lucide-react";
+import { Mail, MapPin, GithubIcon } from "lucide-react";
 import { LiaLinkedinIn } from "react-icons/lia";
 
 export const ContactSection = () => {
@@ -43,14 +43,14 @@ export const ContactSection = () => {
                                 
                             </div>
                         </div>
-                        {/* Instagram */}
+                        {/* Github */}
                         <div className="flex items-center gap-4">
                             <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
-                                <Instagram className="h-6 w-6 text-primary" />
+                                <GithubIcon className="h-6 w-6 text-primary" />
                             </div>
                             <div className="text-left">
-                                <h4>Instagram</h4>
-                                <span className="text-muted-foreground">@stuffontheway</span>
+                                <h4>Github</h4>
+                                <span className="text-muted-foreground">@jezeleii</span>
                             </div>
                         </div>
                     </div>
